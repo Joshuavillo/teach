@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Teacher's Day!</title>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(to bottom right, #111, #444),
+            url("https://i.gifer.com/2yqT.gif");
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 100px;
+            overflow-x: hidden;
+        }
+
+        h2 {
+            margin: 0;
+            font-weight: bold;
+            color: #f9feffa1;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px #fff, 0 0 2px #382e33;
+            font-size: 60px;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+        }
+        .left {
+            margin-top: -110px;
+            margin-left: -200px;
+        }
+
+        .line1 { animation: typing 3s steps(30, end) forwards, blink-caret 0.8s step-end infinite; }
+        .line2 { animation: typing 3s steps(30, end) forwards 1.2s, blink-caret 0.8s step-end infinite; margin-left: 30px; }
+
+        #main-div {
+            position: relative;
+            width: 50%;
+            max-width: 450px;
+            min-width: 320px;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 25px;
+            border: 2px solid #888;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            margin-top: -50px;
+        }
+
+        .cake {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: -110px;
+            left: 50%;
+            transform: translateX(-51%) rotate(1.9deg);
+            background: #fbe7c6;
+            padding: 15px 20px;
+            width: 136%;
+            font-size: 14px;
+            color: #222;
+            border: 2px solid #c9a368;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px #c9a368, 0 0 10px rgba(0,0,0,0.4);
+        }
+
+       .type-line {
+    display: block;
+    white-space: nowrap; 
+    word-break: break-word; 
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(40, end) forwards;
+    font-size: 1em;
+}
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+                gap: 20px;
+                min-height: 100vh;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+            h2 {
+                font-size: 32px;
+            }
+            .left {
+                margin-top: 10px;
+                margin-left: 0;
+            }
+            #main-div {
+                width: 98%;
+                padding: 10px;
+                min-width: unset;
+                margin-top: 10px;
+            }
+            .cake {
+                max-width: 100%;
+            }
+            .scroll {
+                position: static;
+                font-size: 12px;
+                padding: 8px 4px;
+                width: 100%;
+                margin-top: 10px;
+                transform: none;
+                left: unset;
+                bottom: unset;
+            }
+            .type-line {
+                font-size: 0.9em;
+            }
+        }
+
+
+        .line2 { animation-delay: 2.1s; }
+        .line3 { animation-delay: 6.2s; }
+        .line4 { animation-delay: 9.3s; }
+        .line5 { animation-delay: 12.4s; }
+        .line6 { animation-delay: 15.5s; }
+        .line7 { animation-delay: 18.6s; }
+        .line8 { animation-delay: 21.7s; }
+
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink { 0%, 50% { border-color: black; } 51%, 100% { border-color: transparent; }
+ 
+    }
+    .confetti-piece {
+    position: fixed;
+    top: -10px;
+    border-radius: 50%;
+    opacity: 0.9;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="confetti"></div>
+    <div class="left">
+        <h2 class="line1">Happy Teacher's</h2>
+        <h2 class="line2">Day Maam/Sir!</h2>
+    </div>
+
+    <div id="main-div">
+        <img src="cake.jpg" class="cake" alt="Cake">
+
+        <div class="scroll">
+            <p class="type-line line1">Happy Teachers’ Day! 💻</p>
+            <p class="type-line line2">We want to take this opportunity to thank you for your hard work, patience, and dedication.</p>
+            <p class="type-line line3">You have not only shared your knowledge but also inspired us to dream bigger and believe in ourselves.</p>
+            <p class="type-line line4">As we go with another year in the technology field, your guidance will make our learning journey</p>
+            <p class="type-line line5"> and challenging. We truly appreciate all you do every day and your support motivates  </p>
+            <p class="type-line line6">us to keep improving and to pursue our goals with confidence. Wishing you </p>
+            <p class="type-line line7">a meaningful Teachers’ Day filled with gratitude and joy! With respect and appreciation,</p>
+            <p class="type-line line8 caret">- BSIT 1A</p>
+        </div>
+    </div>
+</body>
+<script>
+function startConfetti() {
+    const colors = ["#ff5f5f", "#ffd700", "#5f9eff", "#6fff5f"];
+
+    for (let i = 0; i < 150; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti-piece");
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 2 + "s";
+        confetti.style.width = Math.random() * 8 + 4 + "px";
+        confetti.style.height = confetti.style.width;
+
+        document.body.appendChild(confetti);
+    }
+
+    setTimeout(() => {
+        const allConfetti = document.querySelectorAll(".confetti-piece");
+        allConfetti.forEach(piece => piece.remove());
+    }, 30000); 
+}
+
+startConfetti();
+</script>
+
+
+</html>
